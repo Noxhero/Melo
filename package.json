@@ -1,0 +1,44 @@
+{
+  "name": "melo",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"cross-env BROWSER=none vite\" \"electron .\"",
+    "build": "vite build && electron-builder",
+    "dev": "vite"
+  },
+  "build": {
+    "appId": "com.melo.app",
+    "productName": "Melo",
+    "files": ["dist/**/*", "main.js"],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "icon": "public/icon.png"
+    },
+    "mac": {
+      "icon": "public/icon.png"
+    },
+    "linux": {
+      "icon": "public/icon.png"
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^31.4.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^3.0.1",
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.16.7",
+    "@mui/icons-material": "^5.16.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
